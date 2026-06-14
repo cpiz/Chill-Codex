@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and discussion
+    url: https://github.com/cpiz/chill-codex/discussions
+    about: Ask questions or discuss ideas if Discussions are enabled for this repository.

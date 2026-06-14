@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a problem with installing, launching, or uninstalling Chill Codex.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please avoid sharing tokens, private workspace paths, or sensitive logs.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+      placeholder: Chill Codex installed, but launching it did not start Codex with reduced motion.
+    validations:
+      required: true
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "Example: macOS 15.5"
+    validations:
+      required: true
+
+  - type: input
+    id: codex-path
+    attributes:
+      label: Codex app path
+      placeholder: "/Applications/Codex.app"
+    validations:
+      required: true
+
+  - type: textarea
+    id: install-command
+    attributes:
+      label: Install command
+      description: Paste the exact install command you ran.
+      render: sh
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification-output
+    attributes:
+      label: Verification output
+      description: Run the command below after launching Codex through Chill Codex and paste the output.
+      value: |
+        ps axww -o command | grep 'Codex.app/Contents/MacOS/Codex'
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Installer or uninstaller output
+      description: Paste relevant terminal output, after removing sensitive information.
+      render: text
+    validations:
+      required: false

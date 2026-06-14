@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check shell syntax
+        run: |
+          sh -n install.sh
+          sh -n uninstall.sh
+          sh -n test/install-test.sh
+
+      - name: Run installer test
+        run: sh test/install-test.sh
