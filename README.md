@@ -125,6 +125,12 @@ Chromium/Electron supports the `--force-prefers-reduced-motion` flag. The launch
 
 This project does not guarantee that your fans will never spin. It targets one specific workaround: reducing extra local load caused by Codex UI motion and rendering during long tasks.
 
+## Known Limitation
+
+Chill Codex only controls the launch command it starts. If Codex updates itself and relaunches from inside the official app, the relaunched process may not keep `--force-prefers-reduced-motion`.
+
+If this happens, quit Codex completely and open `~/Applications/Chill Codex.app` again. You can verify the flag with the command in [Verify It Worked](#verify-it-worked).
+
 ## Development
 
 Social preview assets live in `assets/`. Use `assets/social-preview.png` as the GitHub repository social preview image.
